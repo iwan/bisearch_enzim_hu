@@ -15,16 +15,13 @@ A colleague of mine comes to me and expose his work problem, she would like to a
 6. Analyse the 'FPCR' result, and drop the one they have more than 1 product
 
 
-So I build this gem that automatize all the tasks in a single request (technically a Wrapper):
+So I build this gem that automatize all the tasks in a single request (a _Wrapper_):
 
 ```ruby
-chr = "chr17"
-start_pos = 32305219
-seq = "ATTATCACACTCAGGCCCTAGCTGCTAGAAGCCTCATTTGCCTAAGTTTTTGTCCCAATGTTTCCGTGAAGGCAGAGAGAGGAGCTATTTGCATGCCAGCCCAGGGCTACGTAGAAAATATGGCAGGGATCCTCTCACACTGCAGTCGAGTCAAGGCAGTCCAGGGTGGCTGctggggccagactgccccgtcaagatccagcctgcctttcactgactgtgtgattagaatgtcttgccctatccctggactttagtttctgcaa"
+require 'bisearch_enzim_hu'
 
 pd = BisearchEnzimHu::PrimerDesign.new
 pd.sequence(seq, chr, start_pos).search
-File.open('result.yml', 'w') {|f| f.write pd.primers.to_yaml } # save the result (an hash) to a YAML file
 ```
 
 
@@ -47,7 +44,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'bisearch_enzim_hu'
+
+chr = "chr17"
+start_pos = 32305219
+seq = "ATTATCACACTCAGGCCCTAGCTGCTAGAAGCCTCATTTGCCTAAGTTTTTGTCCCAATGTTTCCGTGAAGGCAGAGAGAGGAGCTATTTGCATGCCAGCCCAGGGCTACGTAGAAAATATGGCAGGGATCCTCTCACACTGCAGTCGAGTCAAGGCAGTCCAGGGTGGCTGctggggccagactgccccgtcaagatccagcctgcctttcactgactgtgtgattagaatgtcttgccctatccctggactttagtttctgcaa"
+
+pd = BisearchEnzimHu::PrimerDesign.new
+pd.sequence(seq, chr, start_pos).search # chr and start_pos are optional
+File.open('result.yml', 'w') {|f| f.write pd.primers.to_yaml } # save the result (an hash) to a YAML file
+
+pd.prune # remove from result the _multi products_ FPCR results
+File.open('result_pruned.yml', 'w') {|f| f.write pd.primers.to_yaml }
+```
 
 ## Contributing
 

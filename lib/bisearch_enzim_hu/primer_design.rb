@@ -15,7 +15,7 @@ module BisearchEnzimHu
     end
     
     
-    def sequence(seq, chr, start_pos)
+    def sequence(seq, chr=nil, start_pos=nil)
       @primers = {}
       @chr           = chr
       @start_pos     = start_pos
