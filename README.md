@@ -1,6 +1,7 @@
 # BisearchEnzimHu
 
 A colleague of mine comes to me and expose his work problem, she would like to automatize the following steps:
+
 1. open the browser and connect to the [Primer design](http://bisearch.enzim.hu/?m=search) page of [Bisearch.enzim.hu](http://bisearch.enzim.hu/) site of Institute of Enzymology
 2. filling the form:
   * paste a sequence like "ATTATCACA...tagtttctgcaa"
