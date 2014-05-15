@@ -36,8 +36,8 @@ module BisearchEnzimHu
       page = Net::HTTP.post_form(uri, params)
       puts "---> FPCR completed (time: #{Time.now-t}s)"
 
-      puts "--- save result to file: fpcr_result_#{index}.html"
-      File.open("fpcr_result_#{index}.html", 'w') {|f| f.write page.body }
+      # puts "--- save result to file: fpcr_result_#{index}.html"
+      # File.open("fpcr_result_#{index}.html", 'w') {|f| f.write page.body }
       
       result_page = BisearchEnzimHu::L2ResultPage.new(page.body)
       result_page.parse # return an hash
