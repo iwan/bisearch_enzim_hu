@@ -15,11 +15,11 @@ module BisearchEnzimHu
     end
     
     
-    def sequence(chr, start_pos, seq)
+    def sequence(seq, chr, start_pos)
       @primers = {}
       @chr           = chr
       @start_pos     = start_pos
-      @end_pos       = start_pos + seq.size
+      @end_pos       = start_pos + seq.size if start_pos
       @options[:seq] = seq
       prepare
       self

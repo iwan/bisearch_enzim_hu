@@ -19,7 +19,8 @@ module BisearchEnzimHu
       while !rows.empty?
         # line_a, line_b = rows.shift(2)
         line_a = rows.shift.css("td")
-        line_b = rows.shift.css("td")
+        line_bb = rows.shift
+        line_b = line_bb.css("td")
         hh = { :line_a => line_a, :line_b => line_b }
         h = {}
         # 
@@ -29,6 +30,12 @@ module BisearchEnzimHu
         h[:pa]    = line_a[11].content.to_i
         h[:pea]   = line_a[12].content.to_i
         h[:len]   = line_a[13].content.to_i
+
+        h[:fp]    = line_bb.css("input").select{|el| el["name"]=="fp"}.first
+        h[:fp]    = h[:fp]["value"] if !h[:fp].nil?
+
+        h[:rp]    = line_bb.css("input").select{|el| el["name"]=="rp"}.first
+        h[:rp]    = h[:rp]["value"] if !h[:rp].nil?
 
         hh.each_pair do |i, line|
           h[i] = {}

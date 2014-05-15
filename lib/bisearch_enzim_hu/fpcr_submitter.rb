@@ -11,8 +11,8 @@ module BisearchEnzimHu
     
 
     def run(hash, index)
-      fp   = hash[:line_a][:seq] # forward primer
-      rp   = hash[:line_b][:seq] # reverse primer
+      fp   = hash[:fp] || hash[:line_a][:seq] # forward primer
+      rp   = hash[:rp] || hash[:line_b][:seq] # reverse primer
       fpcr = "#{fp}!#{rp}"
       db   = "Homo sapiens"
 
@@ -20,7 +20,7 @@ module BisearchEnzimHu
         "bis" => "on", # bisulfite
         "db" => db, # database
         "fp" => fp, # forward primer
-        "fpcr" => "GTAGAAAATATGGTAGGGATTT!AAAACAAAACATTCTAATCACA", # 
+        "fpcr" => fpcr, # 
         "fpcr_but.x" => "35",
         "fpcr_but.y" => "6",
         "mm" => "0000000011111111", # mismatches
