@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = BisearchEnzimHu::VERSION
   spec.authors       = ["Iwan Buetti"]
   spec.email         = ["iwan.buetti@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = "Wrapper for Bisearch Primer Design"
+  # spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = "https://github.com/iwan/bisearch_enzim_hu"
   spec.license       = "MIT"
 
@@ -23,5 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 2.6"
 
   spec.add_dependency "mechanize" # http://mechanize.rubyforge.org/Mechanize.html
+  spec.add_dependency "nokogiri" # http://mechanize.rubyforge.org/Mechanize.html
   
 end

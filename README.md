@@ -15,7 +15,7 @@ A colleague of mine comes to me and expose his work problem, she would like to a
 6. Analyse the 'FPCR' result, and drop the one they have more than 1 product
 
 
-So i build this gem that automatize all the tasks in a single request:
+So I build this gem that automatize all the tasks in a single request (technically a Wrapper):
 
 ```ruby
 chr = "chr17"

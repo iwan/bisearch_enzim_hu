@@ -1,6 +1,5 @@
 %w(
     version
-    food
     primer_design
     l1_result_page
     l2_result_page
